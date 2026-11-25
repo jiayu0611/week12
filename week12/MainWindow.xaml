@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500*"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="500*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#FFF4F4E8">
+            <Label Content="學生" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+            <ComboBox x:Name="StudentComboBox" Width="300" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+        </StackPanel>
+        <StatusBar Grid.Row="2" Grid.ColumnSpan="3">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusTextBlock" Width="300" Height="28"/>
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl Grid.Row="1" Margin="3,3,3,3">
+            <TabItem Header="以教師分類課程">
+                <TreeView x:Name="TeacherTreeView" Background="#FFB4C5CC"/>
+            </TabItem>
+            <TabItem Header="所有課程">
+                <TreeView x:Name="CourseListBox" Background="#FFCCC8CC"/>
+            </TabItem>
+        </TabControl>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Button x:Name="AddCourseButton" Content="選課" Width="60" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0"/>
+            <Button x:Name="DeleteCourseButton" Content="退選" Width="60" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0"/>
+            <Button x:Name="SaveCourseButton" Content="存檔" Width="60" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>
